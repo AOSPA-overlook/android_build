@@ -18,7 +18,6 @@
 # hardware, and install to the product partition.
 
 # /product packages
-ifneq ($(TARGET_NO_TELEPHONY), true)
 PRODUCT_PACKAGES += \
-    ImsServiceEntitlement
-endif #TARGET_NO_TELEPHONY
+    ImsServiceEntitlement \
+    preinstalled-packages-platform-telephony-product.xml

@@ -32,12 +32,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PartnerBookmarksProvider \
+    preinstalled-packages-platform-generic-system.xml \
+    Stk \
     Tag \
-
-ifneq ($(TARGET_NO_TELEPHONY), true)
-PRODUCT_PACKAGES += \
-    Stk
-endif #TARGET_NO_TELEPHONY
 
 # OTA support
 PRODUCT_PACKAGES += \
@@ -71,7 +68,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0 \
     android.hardware.radio.deprecated@1.0 \
     android.hardware.secure_element@1.0 \
-    android.hardware.wifi@1.0 \
+    android.hardware.wifi \
     libaudio-resampler \
     libaudiohal \
     libdrm \

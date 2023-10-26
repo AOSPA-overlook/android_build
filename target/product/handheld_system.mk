@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
     CameraExtensionsProxy \
     CaptivePortalLogin \
     CertInstaller \
+    CredentialManager \
     DocumentsUI \
     DownloadProviderUi \
     EasterEgg \
@@ -52,9 +53,11 @@ PRODUCT_PACKAGES += \
     KeyChain \
     librs_jni \
     ManagedProvisioning \
+    MmsService \
     MtpService \
     MusicFX \
     PacProcessor \
+    preinstalled-packages-platform-handheld-system.xml \
     PrintRecommendationService \
     ProxyHandler \
     screenrecord \
@@ -62,16 +65,12 @@ PRODUCT_PACKAGES += \
     SimAppDialog \
     Telecom \
     TelephonyProvider \
+    TeleService \
     Traceur \
     UserDictionaryProvider \
     VpnDialogs \
     vr \
 
-ifneq ($(TARGET_NO_TELEPHONY), true)
-PRODUCT_PACKAGES += \
-  MmsService \
-  TeleService
-endif #TARGET_NO_TELEPHONY
 
 ifneq ($(TARGET_USES_QSPA), true)
 PRODUCT_PACKAGES += \
@@ -90,7 +89,8 @@ PRODUCT_SYSTEM_SERVER_APPS += \
     Telecom \
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
+    frameworks/av/media/libeffects/data/audio_effects.xml:system/etc/audio_effects.xml \
+    frameworks/native/data/etc/android.software.window_magnification.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.window_magnification.xml \
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.carrier?=unknown \
